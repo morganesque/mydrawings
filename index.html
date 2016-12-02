@@ -1,23 +1,4 @@
 ---
-layout: default
+layout: drawing_page
+number: 1
 ---
-  <h1><span>my drawings</span><a href="/drawings/"><img src="/assets/images/drawings/misc/mydrawings.png" align="center" /></a></h1>
-  <div id="head">
-    <div id="nav">
-      <ul>
-          <li><a id="first" class="" href="">&lt;&lt; first &nbsp;&nbsp;</a></li>
-          <li><a id="prev" class="" href="">&lt; previous</a></li>
-          <li><a class="current" id="number" onclick="return false;"></a></li>
-          <li><a id="next" class="" href="">next &gt;</a></li>
-          <li><a id="latest" class="" href="">&nbsp;&nbsp; latest &gt;&gt;</a></li>
-      </ul>
-    </div><!--/nav-->
-  </div><!--/head-->
-  <div id="content">
-      <img id="drawing" src="/assets/images/drawings/full/.gif" alt=""/>
-      <p id="caption"><?=stripslashes($data['Drawing']['caption'])?></p>
-      <p id="time">[ <?php echo date('jS F &#39;y', $data['Drawing']['time']); ?> ]</p>
-  </div><!--/content-->
-  <a href="http://ghijklmno.net/">home</a>
-
-  {{ site.data.drawings }}

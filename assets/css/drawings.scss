@@ -1,8 +1,8 @@
 ---
 ---
 @charset "utf-8";
-@import 'vendor/normalize';
-@import 'base/root';
+// @import 'vendor/normalize';
+// @import 'base/root';
 
 body {
     background-color:white;
@@ -38,17 +38,17 @@ div#nav ul li a {
 	width:100px;
 	height:30px;
 	text-align:center;
-	background-image:url(/img/drawings/misc/deactivated.png);
+	background-image:url(/assets/images/drawings/misc/deactivated.png);
 }
-div#nav ul li a:hover{background-image:url(/img/drawings/misc/hover.png);}
+div#nav ul li a:hover{background-image:url(/assets/images/drawings/misc/hover.png);}
 
 div#nav ul li a.deactivated {color:#eee;}
 div#nav ul li a.deactivated:hover { border-top:0px solid white;}
 
-div#nav ul li a.grey-deactivated {background-image:url(/img/drawings/misc/grey_deactivated.png);color:white}
+div#nav ul li a.grey-deactivated {background-image:url(/assets/images/drawings/misc/grey_deactivated.png);color:white}
 div#nav ul li a.grey-deactivated:hover { border-top:0px solid white;}
 
-div#nav ul li a.current {background-image:url(/img/drawings/misc/current.png);color:white;}
+div#nav ul li a.current {background-image:url(/assets/images/drawings/misc/current.png);color:white;}
 div#nav ul li a.current:hover { border-top:0px solid white;}
 
 div#content {

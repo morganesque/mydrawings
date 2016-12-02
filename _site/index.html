@@ -6,35 +6,47 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Tom Morgan" />
-  <title>Your awesome title</title>
-  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+  <title>My Drawings</title>
+  <meta name="description" content="Way back when I was only a whipper snapper I was casting around for something to make a website about and I realised that one thing I did a lot was draw cartoons. So I drew some and put them online. This is that.
 ">
   <link rel="stylesheet" href="/assets/css/drawings.css" media="screen">
   <link rel="canonical" href="http://localhost:4000/">
-  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your awesome title" />
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="My Drawings" />
 </head>
 
 
   <body>
 
     <main class="main" aria-label="Content">
-        <h1><span>my drawings</span><a href="/drawings/"><img src="/img/drawings/misc/mydrawings.png" align="center" /></a></h1>
+        
+  
+
+  <h1><span>my drawings</span><a href="/drawings/"><img src="/assets/images/drawings/misc/mydrawings.png" align="center" /></a></h1>
+
   <div id="head">
     <div id="nav">
       <ul>
-          <li><a id="first" class="<?=$first['class']?>" href="<?=$first['href']?>">&lt;&lt; first &nbsp;&nbsp;</a></li>
-          <li><a id="prev" class="<?=$prev['class']?>" href="<?=$prev['href']?>">&lt; previous</a></li>
-          <li><a class="current" id="number" onclick="return false;"><?=$data['Drawing']['id']?></a></li>
-          <li><a id="next" class="<?=$next['class']?>" href="<?=$next['href']?>">next &gt;</a></li>
-          <li><a id="latest" class="<?=$latest['class']?>" href="<?=$latest['href']?>">&nbsp;&nbsp; latest &gt;&gt;</a></li>
+          <li><a id="first" class="" href="/1">&lt;&lt; first &nbsp;&nbsp;</a></li>
+          
+          <li><a id="prev" class="grey-deactivated">&lt; previous</a></li>
+          
+          <li><a class="current" id="number">cowboy</a></li>
+          1
+          163
+          
+          <li><a id="next" class="grey-deactivated" >next &gt;</a></li>
+          
+          <li><a id="latest" class="" href="/163">&nbsp;&nbsp; latest &gt;&gt;</a></li>
       </ul>
     </div><!--/nav-->
   </div><!--/head-->
+
   <div id="content">
-      <img id="drawing" src="/img/drawings/full/<?=$data['Drawing']['name']?>.gif" alt="<?=$data['Drawing']['name']?>"/>
-      <p id="caption"><?=stripslashes($data['Drawing']['caption'])?></p>
-      <p id="time">[ <?php echo date('jS F &#39;y', $data['Drawing']['time']); ?> ]</p>
+      <img id="drawing" src="/assets/images/drawings/full/cowboy.gif" alt=""/>
+      <p id="caption">&quot;You ate my pants.&quot;</p>
+      <p id="time">[990289273]</p>
   </div><!--/content-->
+  
   <a href="http://ghijklmno.net/">home</a>
 
     </main>

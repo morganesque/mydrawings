@@ -1,0 +1,37 @@
+---
+layout: default
+---
+  {% assign num = page.number | minus: 1 %}
+  {% assign drawing = site.data.drawings[num] %}
+
+  <h1><span>my drawings</span><a href="/drawings/"><img src="/assets/images/drawings/misc/mydrawings.png" align="center" /></a></h1>
+
+  <div id="head">
+    <div id="nav">
+      <ul>
+          <li><a id="first" class="" href="/1">&lt;&lt; first &nbsp;&nbsp;</a></li>
+          {% if num == 0 %}
+          <li><a id="prev" class="grey-deactivated">&lt; previous</a></li>
+          {% else %}
+          <li><a id="prev" class="" href="/{{ page.number | minus: 1 }}">&lt; previous</a></li>
+          {% endif %}
+          <li><a class="current" id="number">{{ drawing.name }}</a></li>
+          {{ page.number }}
+          {{ site.data.drawings | size }}
+          {% if true %}
+          <li><a id="next" class="grey-deactivated" >next &gt;</a></li>
+          {% else %}
+          <li><a id="next" class="" href="/{{ page.number | plus: 1 }}">next &gt;</a></li>
+          {% endif %}
+          <li><a id="latest" class="" href="/{{ site.data.drawings | size }}">&nbsp;&nbsp; latest &gt;&gt;</a></li>
+      </ul>
+    </div><!--/nav-->
+  </div><!--/head-->
+
+  <div id="content">
+      <img id="drawing" src="/assets/images/drawings/full/{{ drawing.name }}.gif" alt=""/>
+      <p id="caption">{{ drawing.caption }}</p>
+      <p id="time">[{{ drawing.date }}]</p>
+  </div><!--/content-->
+  {{ content }}
+  <a href="http://ghijklmno.net/">home</a>
