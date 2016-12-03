@@ -15,14 +15,16 @@ layout: default
           {% else %}
           <li><a id="prev" class="" href="/{{ page.number | minus: 1 }}">&lt; previous</a></li>
           {% endif %}
+          
           <li><a class="current" id="number">{{ drawing.name }}</a></li>
-          {{ page.number }}
-          {{ site.data.drawings | size }}
-          {% if true %}
+          
+          {% assign big = site.data.drawings | size %}
+          {% if page.number == big  %}
           <li><a id="next" class="grey-deactivated" >next &gt;</a></li>
           {% else %}
           <li><a id="next" class="" href="/{{ page.number | plus: 1 }}">next &gt;</a></li>
           {% endif %}
+          
           <li><a id="latest" class="" href="/{{ site.data.drawings | size }}">&nbsp;&nbsp; latest &gt;&gt;</a></li>
       </ul>
     </div><!--/nav-->
