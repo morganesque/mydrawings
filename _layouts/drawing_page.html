@@ -3,6 +3,26 @@ layout: default
 ---
   {% assign num = page.number | minus: 1 %}
   {% assign drawing = site.data.drawings[num] %}
+  
+  
+  {% capture day %}{{ page.date | date: "%-d" }}{% endcapture %}
+  {% capture dayLastTwoDigits %}{{ day | modulo: 100 }}{% endcapture %}
+  {% if dayLastTwoDigits >= "11" and dayLastTwoDigits <= "13" %}
+      {% assign ordinal = "th" %}
+  {% else %}
+      {% capture dayLastDigit %}{{ day | modulo: 10 }}{% endcapture %}
+      {% case dayLastDigit %}
+          {% when "1" %}
+              {% assign ordinal = "st" %}
+          {% when "2" %}
+              {% assign ordinal = "nd" %}
+          {% when "3" %}
+              {% assign ordinal = "rd" %}
+          {% else %}
+              {% assign ordinal = "th" %}
+      {% endcase %}
+  {% endif %}
+  {% capture ordinalDay %}{{ day | append: ordinal }}{% endcapture %}
 
   <h1><span>my drawings</span><a href="/drawings/"><img src="/assets/images/drawings/misc/mydrawings.png" align="center" /></a></h1>
 
@@ -33,7 +53,10 @@ layout: default
   <div id="content">
       <img id="drawing" src="/assets/images/drawings/full/{{ drawing.name }}.gif" alt=""/>
       <p id="caption">{{ drawing.caption }}</p>
-      <p id="time">[{{ drawing.date }}]</p>
+      <p id="time">[
+        {% if drawing.date == "990289620" %}sometime before {% endif %}
+        {{ drawing.date | date: "%-d" }}{{ ordinalDay }}
+        {{ drawing.date | date: "%B %Y" }}
+      ]</p>
   </div><!--/content-->
   {{ content }}
-  <a href="http://ghijklmno.net/">home</a>
